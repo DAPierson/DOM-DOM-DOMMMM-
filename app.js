@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
             let previous = div.previousSibling;
             let next = div.nextSibling;
             let pid = (div.id - 1);
-            let nid = (div.id + 1);
+            let nid = (div.id - 1 + 2);
+            console.log(pid)
+            console.log(nid)
 
             console.log(" next " + next)
 
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (div.id % 2 === 0) {
                 
                 if (next === null){                  
-                 alert("test");
+                 alert("No MOAR Boxes!");
                 }
                 else if (typeof(next) === 'object') {
                     document.body.removeChild(next);
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.body.removeChild(previous);
                 }
                 if (previous.nodeName === "BUTTON") {
-                    alert("test");
+                    alert("No MOAR Boxes!");
                 }
 
             };

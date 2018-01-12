@@ -35,70 +35,69 @@ document.addEventListener("DOMContentLoaded", function () {
             let next = div.nextSibling;
             let pid = (div.id - 1);
             let nid = (div.id + 1);
-            console.log('prev: ' + previous);
-            console.log('next: ' + next);
-
             
 
 
+
+
             if (div.id % 2 === 0) {
-                 document.body.removeChild(next);
+                document.body.removeChild(next);
+            } else {
+                if (previous.nodeName != 'BUTTON') {
+                    document.body.removeChild(previous);
+
+
                 }
-             if (next.nodeName ==='BUTTON' ){
-                    alert('No Square!');
-                }
-             else {
-                if (previous.nodeName != 'BUTTON'){
-                 document.body.removeChild(previous);}}
-                 
-                 
-                
+            };
 
 
 
-
-
-
-
-
-            div.addEventListener("click", function () {
-
-
-                let colors = [
-                    {
-                        color: "red",
-                    },
-                    {
-                        color: "blue",
-                    },
-                    {
-                        color: "yellow",
-                    },
-                    {
-                        color: 'orange',
-                    },
-                ];
-                function getRandomInt(max) {
-                    return Math.floor(Math.random() * Math.floor(max));
-                }
-                let x = getRandomInt(4);
-                div.style.backgroundColor = colors[x].color;
-
-
-
-
-
-            });
 
 
 
 
         });
 
+
+        div.addEventListener("click", function () {
+
+
+            let colors = [
+                {
+                    color: "red",
+                },
+                {
+                    color: "blue",
+                },
+                {
+                    color: "yellow",
+                },
+                {
+                    color: 'orange',
+                },
+            ];
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * Math.floor(max));
+            }
+            let x = getRandomInt(4);
+            div.style.backgroundColor = colors[x].color;
+
+
+
+
+
+        });
+
+
+
+
+
+
+
     });
 
+});
 
-    
 
 
 

@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.appendChild(btnText);
     document.body.appendChild(button);
     let id = 1;
+    
     button.addEventListener('click', function () {
         let div = document.createElement('div');
         document.body.appendChild(div);
@@ -35,19 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
             let next = div.nextSibling;
             let pid = (div.id - 1);
             let nid = (div.id + 1);
-            
 
+            console.log(" next " + next)
 
 
 
             if (div.id % 2 === 0) {
-                document.body.removeChild(next);
-            } else {
+                
+                if (next === null){                  
+                 alert("test");
+                }
+                else if (typeof(next) === 'object') {
+                    document.body.removeChild(next);
+                }
+            }
+
+            else {
                 if (previous.nodeName != 'BUTTON') {
                     document.body.removeChild(previous);
-
-
                 }
+                if (previous.nodeName === "BUTTON") {
+                    alert("test");
+                }
+
             };
 
 
